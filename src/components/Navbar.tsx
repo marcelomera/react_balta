@@ -15,7 +15,7 @@ const NavBar = () => {
             <ul className="uk-navbar-nav">
               <li>
                 <a href="#">
-                  {/* <span uk-icon="icon: plus; ratio: 1.2"></span> */}
+                  <span uk-icon="icon: plus; ratio: 1.2">+</span>
                 </a>
               </li>
             </ul>
