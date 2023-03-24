@@ -1,12 +1,10 @@
-import React from "react";
-import { Todo } from "../models/Todo";
+import React, { useContext } from "react";
+import { TodoContext } from "../contexts/TodoContext";
+import { TodoContextType } from "../contexts/TodoContextType";
 import TodoListItem from "./TodoListeItem";
 
 const TodoList = () => {
-  const todos: Todo[] = [
-    { id: 1, title: "Ir ao Mercado", done: false },
-    { id: 2, title: "Ir a Academia", done: false },
-  ];
+  const { todos } = useContext<TodoContextType>(TodoContext);
   return (
     <table className="uk-table">
       <caption>Lista de Tarefas</caption>
@@ -19,7 +17,7 @@ const TodoList = () => {
       </thead>
       <tbody>
         {todos?.map((todo) => (
-          <TodoListItem key={todo.id}></TodoListItem>
+          <TodoListItem key={todo.id} todo={todo}></TodoListItem>
         ))}
       </tbody>
     </table>
